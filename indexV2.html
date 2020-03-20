@@ -5,12 +5,9 @@
     <script>
     function getURL() {
         var url = "https://www.supremenewyork.com/shop/shoes/of09o2wvq/uieqsjb60";
-        xmlhttp=new XMLHttpRequest();
-        xmlhttp.open("GET",url,false);
-        xmlhttp.send();
-        parser=new DOMParser();
-        return parser.parseFromString(xmlhttp.responseText,"text/html");      
-
+        $.get(url,function(data){
+            $( ".result" ).html( data );
+        });
     }
     </script>
 </head>
